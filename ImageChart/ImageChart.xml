@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ImageChart</name>
+    </assembly>
+    <members>
+        <member name="T:ImageChart.Bar">
+            <summary>
+            A measurable value represented as a bar.
+            </summary>
+        </member>
+        <member name="P:ImageChart.Bar.Name">
+            <summary>The name for this item.</summary>
+        </member>
+        <member name="P:ImageChart.Bar.Value">
+            <summary>The value to represent as a bar.</summary>
+        </member>
+        <member name="P:ImageChart.Bar.Color">
+            <summary>An optional color.</summary>
+        </member>
+        <member name="T:ImageChart.BarChartBuilder">
+            <summary>
+            Builds a bar chart.
+            </summary>
+        </member>
+        <member name="M:ImageChart.BarChartBuilder.SetSize(System.Int32,System.Int32)">
+            <summary>Sets the image size.</summary>
+            <param name="width">Width in pixels.</param>
+            <param name="height">Height in pixels.</param>
+        </member>
+        <member name="M:ImageChart.BarChartBuilder.SetTitle(System.String)">
+            <summary>Sets the title of the chart, appearing at the top.</summary>
+            <param name="title">The title.</param>
+        </member>
+        <member name="M:ImageChart.BarChartBuilder.SetTextColor(System.Drawing.Color)">
+            <summary>Sets the color of the labels on the chart.</summary>
+            <param name="color">The color.</param>
+        </member>
+        <member name="M:ImageChart.BarChartBuilder.SetBackgroundColor(System.Drawing.Color)">
+            <summary>Sets the color of the chart background.</summary>
+            <param name="color">The color.</param>
+        </member>
+        <member name="M:ImageChart.BarChartBuilder.SetBarColor(System.Drawing.Color)">
+            <summary>Sets the default color of the bars on the chart.</summary>
+            <param name="color">The color.</param>
+        </member>
+        <member name="M:ImageChart.BarChartBuilder.SetMin(System.Single)">
+            <summary>Sets the lower bound of the chart.</summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:ImageChart.BarChartBuilder.SetMax(System.Single)">
+            <summary>Sets the upper bound of the chart.</summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:ImageChart.BarChartBuilder.SetBars(System.Collections.Generic.IEnumerable{ImageChart.Bar})">
+            <summary>Sets the items to display on the chart.</summary>
+            <param name="bars">The list of bars.</param>
+        </member>
+        <member name="M:ImageChart.BarChartBuilder.AddBar(ImageChart.Bar)">
+            <summary>Adds an item to display on the chart.</summary>
+            <param name="bar">A bar.</param>
+        </member>
+        <member name="M:ImageChart.BarChartBuilder.Build(System.String)">
+            <summary>
+            Builds the specified chart and writes it to a file in the implied format.
+            Supported formats: BMP, JPEG, GIF, PNG
+            </summary>
+            <param name="outputPath">The output path including file name.</param>
+        </member>
+    </members>
+</doc>
