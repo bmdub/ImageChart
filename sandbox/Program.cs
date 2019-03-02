@@ -9,7 +9,7 @@ namespace sandbox
         {
             // Create a bar chart
             new ImageChart.BarChartBuilder()
-                .SetSize(600, 100)
+                .SetSize(300, 100)
                 .SetTextColor(Color.White)
                 .SetBackgroundColor(Color.Black)
                 .SetBarColor(Color.LimeGreen)

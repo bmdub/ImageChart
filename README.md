@@ -5,6 +5,8 @@ ImageChart is a cross-platform C# library allows you to create simple charts as 
 
 This library makes use of the ImageSharp drawing library.
 
+![alt text](https://raw.githubusercontent.com/bmdub/ImageChart/master/image/test.png)
+
 ### Usage
 
 ```CSharp
