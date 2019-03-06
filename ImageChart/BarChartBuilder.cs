@@ -22,6 +22,7 @@ namespace ImageChart
         Rgba32 _barColor = Rgba32.LimeGreen;
         float? _specifiedMinValue = null;
         float? _specifiedMaxValue = null;
+        FontFamily _fontFamily;
         List<Bar> _bars = new List<Bar>();
 
         /// <summary>Sets the image size.</summary>
@@ -98,6 +99,37 @@ namespace ImageChart
             return this;
         }
 
+        /// <summary>Adds the items to display on the chart.</summary>
+        /// <param name="bars">The list of bars.</param>
+        public BarChartBuilder AddBars(IEnumerable<Bar> bars)
+        {
+            _bars.AddRange(bars);
+            return this;
+        }
+
+        /// <summary>Sets the font to the indicated installed font.</summary>
+        /// <param name="fontFamily">The name of the font family.</param>
+        public BarChartBuilder SetFontFamily(string fontFamily)
+        {
+            _fontFamily = SystemFonts.Families
+                .Where(family => string.Equals(family.Name, fontFamily, StringComparison.CurrentCultureIgnoreCase))
+                .FirstOrDefault();
+
+            if (_fontFamily == null)
+                throw new ArgumentException($"Could not find font: {fontFamily}");
+
+            return this;
+        }
+
+        /// <summary>Sets the font to the font file.</summary>
+        /// <param name="fontPath">The path to the font file.</param>
+        public BarChartBuilder SetFont(string fontPath)
+        {
+            _fontFamily = new FontCollection().Install(fontPath);
+
+            return this;
+        }
+
         /// <summary>
         /// Builds the specified chart and writes it to a file in the implied format.
         /// Supported formats: BMP, JPEG, GIF, PNG
@@ -129,8 +161,14 @@ namespace ImageChart
             var titleFontSize = rowContentHeight * 1f;
             var labelFontSize = rowContentHeight * .8f;
 
-            Font titleFont = SystemFonts.CreateFont("Arial", titleFontSize);
-            Font labelFont = SystemFonts.CreateFont("Arial", labelFontSize);
+            // Set the fonts
+            if(_fontFamily == null)
+            {
+                // If no font explicitly chosen, try Arial.
+                SetFontFamily("Arial");
+            }
+            Font titleFont = _fontFamily.CreateFont(titleFontSize);
+            Font labelFont = _fontFamily.CreateFont(labelFontSize);
 
             // Calculate widths
             var barNameWidthMax = _bars.Max(bar => TextMeasurer.Measure(bar.Name, new RendererOptions(labelFont)).Width);

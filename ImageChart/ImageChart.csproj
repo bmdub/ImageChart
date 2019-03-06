@@ -12,7 +12,7 @@
     <PackageProjectUrl>https://github.com/bmdub/ImageChart</PackageProjectUrl>
     <RepositoryUrl>https://github.com/bmdub/ImageChart</RepositoryUrl>
     <PackageTags>chart</PackageTags>
-    <Version>0.5.0</Version>
+    <Version>0.5.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

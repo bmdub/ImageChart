@@ -13,6 +13,7 @@ namespace sandbox
                 .SetTextColor(Color.White)
                 .SetBackgroundColor(Color.Black)
                 .SetBarColor(Color.LimeGreen)
+                //.SetFont("OpenSans-Regular.ttf")
                 .SetTitle("Election Results")
                 .AddBar(new ImageChart.Bar() {  Name = "Cthulu", Value = 512, Color = Color.Gold })
                 .AddBar(new ImageChart.Bar() { Name = "Bob", Value = 112 })

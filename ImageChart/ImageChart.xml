@@ -60,6 +60,18 @@
             <summary>Adds an item to display on the chart.</summary>
             <param name="bar">A bar.</param>
         </member>
+        <member name="M:ImageChart.BarChartBuilder.AddBars(System.Collections.Generic.IEnumerable{ImageChart.Bar})">
+            <summary>Adds the items to display on the chart.</summary>
+            <param name="bars">The list of bars.</param>
+        </member>
+        <member name="M:ImageChart.BarChartBuilder.SetFontFamily(System.String)">
+            <summary>Sets the font to the indicated installed font.</summary>
+            <param name="fontFamily">The name of the font family.</param>
+        </member>
+        <member name="M:ImageChart.BarChartBuilder.SetFont(System.String)">
+            <summary>Sets the font to the font file.</summary>
+            <param name="fontPath">The path to the font file.</param>
+        </member>
         <member name="M:ImageChart.BarChartBuilder.Build(System.String)">
             <summary>
             Builds the specified chart and writes it to a file in the implied format.
